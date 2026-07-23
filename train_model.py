@@ -5,7 +5,7 @@ model = YOLO("yolo26m-seg.pt")
 
 # MODELİ YENİ VERİLERLE EĞİTMEYE BAŞLA
 model.train(
-    data="/home/ali/Masaüstü/3_etiketli/buzdolabı/etiketli/yolo_devam.yolo26_full_train/dataset_6_kat/dataset.yaml",
+    data="/home/ali/Masaüstü/3_etiketli/buzdolabı/etiketli/yolo_devam.yolo26_full_train/dataset/dataset.yaml",
     epochs=150,
     patience=30,
     imgsz=1280,
