@@ -1,14 +1,7 @@
 from ultralytics import YOLO
 
-model = YOLO("/home/ali/yazilim/yolo_model_staj/runs/segment/train-37/weights/last.pt")
+# En son checkpoint'in gerçek yolunu buraya yaz
+last_ckpt = "runs/segment/train/weights/last.pt"
 
-results = model.train(
-    resume=True,
-    epochs=150,
-    device=0,
-    cache="disk",  # RAM değil disk cache - daha az RAM kullanır
-    amp=True,
-    plots=True,
-    save_period=10,
-    val=True,
-)
+model = YOLO(last_ckpt)
+model.train(resume=True, epochs=250)  # epochs sadece toplam hedefi uzatmak için, diğer argümanlar last.pt'den okunur
