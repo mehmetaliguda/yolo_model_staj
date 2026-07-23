@@ -4,7 +4,7 @@ model = YOLO("yolo26m-seg.pt")
 
 model.train(
     data="/home/ali/Masaüstü/3_etiketli/buzdolabı/etiketli/yolo_devam.yolo26_full_train/dataset_10_kat/dataset.yaml",
-    epochs=150,
+    epochs=250,
     patience=25,
     imgsz=1280,               # 1280 -> 800, 6-8GB için gerçekçi üst sınır
     batch=4,                 # sabit, küçük batch
@@ -15,7 +15,7 @@ model.train(
     lr0=0.001,
     lrf=0.01,
     warmup_epochs=3,
-    freeze=15,                # daha fazla katmanı dondur, hem VRAM hem overfit için iyi
+    freeze=10,                # daha fazla katmanı dondur, hem VRAM hem overfit için iyi
     degrees=10.0,
     translate=0.1,
     scale=0.3,
