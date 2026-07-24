@@ -4,11 +4,11 @@ DATA_YAML = "/home/ali/Masaüstü/.../dataset.yaml"
 
 def mode_train(model, **overrides):
     args = dict(
-        data=DATA_YAML,
+        data="/home/ali/Masaüstü/3_etiketli/buzdolabı/etiketli/yolo_devam.yolo26_full_train/dataset_10_kat/dataset.yaml",
         epochs=250,
         patience=25,
         imgsz=1280,
-        batch=8,
+        batch=2,
         device=0,
         amp=True,
         cache=False,
@@ -16,7 +16,7 @@ def mode_train(model, **overrides):
         lr0=0.001,
         lrf=0.01,
         warmup_epochs=3,
-        freeze=22,
+        freeze=10,
         degrees=10.0,
         translate=0.1,
         scale=0.3,
